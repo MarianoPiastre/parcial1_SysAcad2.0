@@ -7,26 +7,6 @@ from app.services import TipoDedicacionService
 from app import db
 
 class TipoDedicacionTestCase(unittest.TestCase):
-    def setUp(self):
-        os.environ['FLASK_CONTEXT'] = 'testing'
-        self.app = create_app()
-        self.app_context = self.app.app_context()
-        self.app_context.push()
-        db.create_all()
-        
-    def tearDown(self):
-        db.session.remove()
-        db.drop_all()
-        self.app_context.pop()
-        
-    def test_tipodedicacion_creation(self):
-        tipo_dedicacion = TipoDedicacion()
-        tipo_dedicacion.nombre= "Simple"
-        tipo_dedicacion.observacion = "Observacion 1"
-        self.assertIsNotNone(tipo_dedicacion)
-        self.assertEqual(tipo_dedicacion.nombre, "Simple")
-        self.assertIsNotNone(tipo_dedicacion.observacion)
-        self.assertEqual(tipo_dedicacion.observacion, "Observacion 1")
 
     def setUp(self):
         os.environ['FLASK_CONTEXT'] = 'testing'
